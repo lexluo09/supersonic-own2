@@ -1,0 +1,68 @@
+server:
+  servlet:
+    context-path:
+  port: 8096
+
+
+spring:
+  h2:
+    console:
+      path: /h2-console/semantic
+      # enabled web
+      enabled: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:semantic;DATABASE_TO_UPPER=false
+    username: root
+    password: semantic
+    schema: classpath:db/semantic-schema-h2.sql
+    data: classpath:db/semantic-data-h2.sql
+
+
+## your datasource config
+source:
+  initial-size: 1
+  min-idle: 1
+  max-wait: 30000
+  max-active: 10
+  break-after-acquire-failure: false
+  connection-error-retry-attempts: 1
+  time-between-eviction-runs-millis: 2000
+  min-evictable-idle-time-millis: 600000
+  max-evictable-idle-time-millis: 900000
+  time-between-connect-error-millis: 60000
+  test-while-idle: true
+  test-on-borrow: false
+  test-on-return: false
+  validation-query: select 1
+  validation-query-timeout: 10
+  keep-alive: false
+  filters: stat
+  enable-query-log: false
+  result-limit: 1000000
+
+
+parser:
+  server:
+    host: 11.154.212.211:8081
+
+
+sys:
+  custom:
+    modid: 966401
+    cmdid: 65536
+
+tag:
+  polaris:
+    server:
+      host: http://bd-pre.tmeoa.com/
+
+model:
+  yaml:
+    file:
+      dir: /data/services/semantic_parse_sit-1.0/conf/models/
+
+authentication:
+  enable: false
+  exclude:
+    path: /api/user/login,/api/user/register
