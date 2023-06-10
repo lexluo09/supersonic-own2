@@ -13,10 +13,9 @@
     <parent>
         <groupId>com.tencent.supersonic</groupId>
         <artifactId>supersonic</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>chat</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    
+
 </project>
